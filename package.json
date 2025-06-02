@@ -1,19 +1,31 @@
 {
   "name": "doc-chimp",
   "version": "0.0.0",
-  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "doc-chimp": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "license": "MIT",
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "tsc",
-    "test": "jest",
-    "start": "ts-node src/index.ts"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "pack": "npm pack",
+    "release": "npm run clean && npm run build && npm publish",
+    "release:patch": "npm version patch && git push && git push --tags && npm run release",
+    "release:minor": "npm version minor && git push && git push --tags && npm run release",
+    "release:major": "npm version major && git push && git push --tags && npm run release",
+    "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Mark Rabey <mark@markrabey.com> (http://markrabey.com/)",
   "description": "",
   "dependencies": {
     "@types/node": "^22.15.29",
     "chalk": "^5.4.1",
+    "commander": "^14.0.0",
     "comment-parser": "^1.4.1",
     "globby": "^14.1.0",
     "simple-git": "^3.27.0",

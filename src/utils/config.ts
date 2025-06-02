@@ -10,6 +10,10 @@ export type DocChimpConfig = {
   toc: boolean;
 };
 
+export type DocChimpConfigKey = keyof DocChimpConfig;
+export type DocChimpConfigValue<K extends DocChimpConfigKey> =
+  DocChimpConfig[K];
+
 export async function loadDocChimpConfig(): Promise<DocChimpConfig> {
   const chimpRcPath = path.resolve('.chimprc');
 

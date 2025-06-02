@@ -1,7 +1,13 @@
 {
   "docChimp": {
-    "include": ["src/components", "src/hooks"],
-    "exclude": ["node_modules", "dist"],
+    "include": [
+      "src/components",
+      "src/hooks"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist"
+    ],
     "outputDir": "docs",
     "changelog": true,
     "prSummary": true,
