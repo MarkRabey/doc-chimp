@@ -3,6 +3,7 @@ import { Command } from 'commander';
 // Import JSON using createRequire for NodeNext compatibility
 import { createRequire } from 'node:module';
 import { handleConfig } from './config.js';
+import { handleOverview } from './overview.js';
 const require = createRequire(import.meta.url);
 const { version } = require('../../package.json');
 
@@ -27,6 +28,11 @@ export function runCLI() {
     .option('-s, --set <key>', 'Set value')
     .option('-v, --value <val>', 'Value when used with --set')
     .action(handleConfig);
+
+  program
+    .command('overview')
+    .description('Generate a summary of recent commits')
+    .action(handleOverview);
 
   program.parse(process.argv);
 }
