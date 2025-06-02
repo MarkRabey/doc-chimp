@@ -17,7 +17,7 @@
     "release:patch": "npm version patch && git push && git push --tags && npm run release",
     "release:minor": "npm version minor && git push && git push --tags && npm run release",
     "release:major": "npm version major && git push && git push --tags && npm run release",
-    "test": "jest"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "keywords": [],
   "author": "Mark Rabey <mark@markrabey.com> (http://markrabey.com/)",
