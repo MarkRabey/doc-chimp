@@ -1,4 +1,7 @@
 {
+  "gitChimp": {
+    "model": "gpt-4o"
+  },
   "docChimp": {
     "include": [
       "src/components",
