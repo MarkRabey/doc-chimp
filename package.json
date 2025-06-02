@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "@types/node": "^22.15.29",
+    "chalk": "^5.4.1",
     "comment-parser": "^1.4.1",
     "globby": "^14.1.0",
     "simple-git": "^3.27.0",
